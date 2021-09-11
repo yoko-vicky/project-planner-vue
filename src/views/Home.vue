@@ -4,7 +4,7 @@
     <FilterNav />
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
-        <SingleProject :project="project" @remove="handleRemove()" />
+        <SingleProject :project="project" @remove="handleRemove" @complete="handleComplete" />
       </div>
     </div>
   </div>
@@ -34,6 +34,12 @@ export default {
   methods:{
     handleRemove(projectId){
       this.projects = this.projects.filter((pr)=> pr.id !== projectId)
+    },
+    handleComplete(projectId){
+      let project = this.projects.find((pr)=> pr.id === projectId)
+      if(project){
+        project.complete = !project.complete
+      }
     }
   }
 }
