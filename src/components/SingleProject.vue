@@ -31,7 +31,8 @@ export default {
     removeProject(){
       // remove project from json data
         fetch(this.uri, { method: 'DELETE' })
-        .then(()=> this.$emit('remove'))
+        .then(()=> this.$emit('remove', this.project.id))
+        .catch(err => console.log(err))
     }
   }
 }
