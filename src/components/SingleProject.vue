@@ -3,7 +3,7 @@
     <div class="actions">
       <h3 @click="toggleShowDetails">{{ project.title }}</h3>
     </div>
-    <div class="details" v-if="showDetails">
+    <div class="details" v-show="showDetails">
       <p>{{ project.details }}</p>
     </div>
   </div>
