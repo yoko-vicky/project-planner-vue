@@ -2,7 +2,11 @@
   <div class="home">
     <h1>Project Planner</h1>
     <FilterNav />
-    <SingleProject />
+    <div v-if="projects.length">
+      <div v-for="project in projects" :key="project.id">
+        <SingleProject :project="project" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,6 +19,17 @@ export default {
   components: {
     FilterNav,
     SingleProject
+  },
+  data(){
+    return {
+      projects: []
+    }
+  },
+  mounted(){
+    fetch('http://localhost:3000/projects')
+    .then(res => res.json())
+    .then(data => this.projects = data)
+    .then(error => console.log('error', error.message))
   }
 }
 </script>

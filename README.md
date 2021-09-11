@@ -15,7 +15,12 @@ npm run serve
 npm run build
 ```
 
-### To run json server, 
+### How to use json server
+
+```
+npm install -g json-server
+```
+
 ```
 npx json-server --watch data/db.json
 ```
