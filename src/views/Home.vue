@@ -4,7 +4,7 @@
     <FilterNav />
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
-        <SingleProject :project="project" />
+        <SingleProject :project="project" @remove="removeProjectFromLocalProjects(project.id)" />
       </div>
     </div>
   </div>
@@ -29,7 +29,12 @@ export default {
     fetch('http://localhost:3000/projects')
     .then(res => res.json())
     .then(data => this.projects = data)
-    .then(error => console.log('error', error.message))
+    .then(error => console.log('error', error))
+  },
+  methods:{
+    removeProjectFromLocalProjects(projectId){
+      this.projects = this.projects.filter((pr)=> pr.id !== projectId)
+    }
   }
 }
 </script>
