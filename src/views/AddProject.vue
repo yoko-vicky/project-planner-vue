@@ -8,6 +8,7 @@
     <textarea v-model="details" required></textarea>
 
     <button>Add Project</button>
+    <p v-if="error">{{ error }}</p>
   </form>
 </template>
 
@@ -24,8 +25,8 @@ export default {
   },
   methods:{
     handleSubmit(){
-      if(this.title.length < 1 || this.details.length < 1){
-        this.error = 'Please provide more than 2 letters long to title and details'
+      if(this.title.length < 3 || this.details.length < 3){
+        this.error = 'Please provide more than 3 letters long to title and details'
         return
       }
 

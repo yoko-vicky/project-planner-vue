@@ -15,7 +15,8 @@ const routes = [
   {
     path: '/edit/:id',
     name: 'EditProject',
-    component: ()=> import(/* webpackChunkName: "editProject" */ '../views/EditProject.vue')
+    component: () => import(/* webpackChunkName: "editProject" */ '../views/EditProject.vue'),
+    props: true
   }
 ]
 
