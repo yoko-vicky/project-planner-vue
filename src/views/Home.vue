@@ -29,7 +29,7 @@ export default {
     fetch('http://localhost:3000/projects')
     .then(res => res.json())
     .then(data => this.projects = data)
-    .then(error => console.log('error', error))
+    .catch(error => console.log('error', error))
   },
   methods:{
     handleRemove(projectId){
