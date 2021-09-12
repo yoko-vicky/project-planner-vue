@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Project Planner</h1>
-    <FilterNav />
+    <FilterNav @updateFilter="filter=$event" :filter="filter" />
     <div v-if="projects.length">
       <div v-for="project in projects" :key="project.id">
         <SingleProject :project="project" @remove="handleRemove" @complete="handleComplete" />
@@ -22,7 +22,8 @@ export default {
   },
   data(){
     return {
-      projects: []
+      projects: [],
+      filter: 'all'
     }
   },
   mounted(){
@@ -40,7 +41,7 @@ export default {
       if(project){
         project.complete = !project.complete
       }
-    }
+    },
   }
 }
 </script>
