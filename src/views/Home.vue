@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Project Planner</h1>
     <FilterNav @updateFilter="filter=$event" :filter="filter" />
     <div v-if="projects.length">
       <div v-for="project in filteredProjects" :key="project.id">

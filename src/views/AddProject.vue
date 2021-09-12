@@ -1,5 +1,5 @@
 <template>
-  <h1>Add New Project</h1>
+  <h1>Add a New Project</h1>
   <form @submit.prevent="handleSubmit">
     <label>Title:</label>
     <input type="text" v-model="title" required>

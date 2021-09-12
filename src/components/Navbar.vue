@@ -1,6 +1,6 @@
 <template>
   <div class="main-nav">
-    <router-link :to="{ name: 'Home'}">Projects</router-link> |
+     <router-link :to="{ name: 'Home'}">Projects</router-link> |
     <router-link :to="{ name: 'AddProject'}">Add a New Project</router-link>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
 <style>
   .main-nav {
     text-align: center;
-    margin: 40px auto;
+    margin: 20px auto 40px;
   }
   .main-nav a{
     display: inline-block;
@@ -23,8 +23,9 @@ export default {
     color: #999;
     font-size: 18px;
   }
-  a.router-link-active {
+  .main-nav a.router-link-active {
     border-bottom: 2px solid #00ce89;
     padding-bottom: 4px;
+    color: #555;
   }
 </style>
